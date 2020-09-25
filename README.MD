@@ -55,7 +55,7 @@ Após, utilize os comandos:
 - `npx sequelize db:migrate`
 - `npx sequelize db:seed:all`
 
-Esses comandos vão criar respectivamente, a `database`, as `tables` e após, inserir os dados necessários.
+Esses comandos vão criar respectivamente, a `database`, as `tables` e após, inserir dados exemplos nas tabelas.
 
 As tabelas criadas são:
 
