@@ -1,5 +1,4 @@
-Esse é um projeto para o conteúdo de `React Testing Library`.
-
+Esse é um projeto para o conteúdo de `ORM - Associations`
 ### Antes de iniciar
 
 Crie um fork desse projeto e para isso siga esse [tutorial de como realizar um fork](https://guides.github.com/activities/forking/).
