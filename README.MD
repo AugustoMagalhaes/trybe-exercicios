@@ -50,27 +50,27 @@ Após, utilize o comando:
 
 #### Exercício 1
 
-Crie o model de Plans;
+Crie o model de `Plans`.
 
 #### Exercício 2
 
-Crie o model de Patients;
+Crie o model de `Patients`.
 
 #### Exercício 3
 
-Crie o model de Surgeries;
+Crie o model de `Surgeries`.
 
 #### Exercício 4
 
-Crie o model de Patient_surgeries;
+Crie o model de `Patient_surgeries`.
 
 #### Exercício 5
 
-Crie um endpoint que liste todos os pacientes e seus respectivos planos;
+Crie um endpoint que liste todos os pacientes e seus respectivos planos.
 
 #### Exercício 6
 
-Crie um endpoint que liste todos os pacientes e suas respectivas cirurgias realizadas;
+Crie um endpoint que liste todos os pacientes e suas respectivas cirurgias realizadas.
 
 #### Exercício 7
 
@@ -78,12 +78,12 @@ Crie um endpoint que de acordo com o id de um plano, que deve ser recebido via r
 
 #### Exercício 8 (Bônus)
 
-Crie um endpoint capaz de adicionar um novo paciente;
+Crie um endpoint capaz de adicionar um novo paciente.
 
 #### Exercício 9 (Bônus)
 
-Crie um endpoint que liste todos os pacientes e suas cirurgias realizadas, mas oculte o nome do médico responsável;
+Crie um endpoint que liste todos os pacientes e suas cirurgias realizadas, mas oculte o nome do médico responsável.
 
 #### Exercício 10 (Bônus)
 
-Crie um endpoint que de acordo com o nome do médico, que deve ser recebido via requisição, liste todas as cirurgias realizadas pelo mesmo;
+Crie um endpoint que de acordo com o nome do médico, que deve ser recebido via requisição, liste todas as cirurgias realizadas pelo mesmo.
