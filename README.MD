@@ -39,7 +39,7 @@ Nesse exercício vamos criar uma API que será responsável pela gestão de um s
 
 ![Diagrama](images/diagrama3.png)
 
-Este repositório ja contem alguns arquivos padrões, ao executar `npm install` as seguintes dependências foram instaladas:
+Este repositório ja contém alguns arquivos padrões, ao executar `npm install` as seguintes dependências foram instaladas:
 
 - express
 
