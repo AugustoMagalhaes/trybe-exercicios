@@ -43,6 +43,8 @@ Este repositório ja contém alguns arquivos padrões, ao executar `npm install`
 
 - express
 
+- nodemon
+
 - sequelize mysql2
 
 - sequelize-cli

@@ -4,6 +4,7 @@
   "description": "Esse é um projeto para o conteúdo de `React Testing Library`.",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,6 +24,7 @@
     "sequelize": "^6.3.5"
   },
   "devDependencies": {
+    "nodemon": "^2.0.4",
     "sequelize-cli": "^6.2.0"
   }
 }
