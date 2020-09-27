@@ -96,14 +96,16 @@ Crie um endpoint que liste todos os pacientes e suas respectivas cirurgias reali
 
 Crie um endpoint que de acordo com o id de um plano, que deve ser recebido via requisição, liste os pacientes que o possuem.
 
-#### Exercício 8 (Bônus)
+### Bônus
+
+#### Exercício 1 
 
 Crie um endpoint capaz de adicionar um novo paciente.
 
-#### Exercício 9 (Bônus)
+#### Exercício 2
 
 Crie um endpoint que liste todos os pacientes e suas cirurgias realizadas, mas oculte o nome do médico responsável.
 
-#### Exercício 10 (Bônus)
+#### Exercício 3
 
-Crie um endpoint que de acordo com o nome do médico, que deve ser recebido via requisição, liste todas as cirurgias realizadas pelo mesmo.
+Crie um endpoint que de acordo com o nome do médico, que deve ser recebido via requisição, liste todas as cirurgias realizadas pelo mesmo, um get na url `http://localhost:3000/surgeries/Rey%20Dos%20Santos`deve retornar as cirurgias realizadas pelo médico `Rey Dos Santos`.
