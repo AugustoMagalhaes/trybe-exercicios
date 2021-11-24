@@ -1,0 +1,15 @@
+h1,p {
+    text-align: center;
+}
+
+li {
+    list-style: none;
+}
+
+li:hover {
+    background-color: #a5cc6b;    
+}
+
+li:active {
+    color: #ffffff;
+}
