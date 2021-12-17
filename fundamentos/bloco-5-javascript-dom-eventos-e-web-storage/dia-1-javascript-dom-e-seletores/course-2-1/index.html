@@ -3,9 +3,9 @@
   <body>
     <header>
       <h2 id="page-title">Título</h2>
-      <p id="paragraph">Dê uma cor para este parágrafo!</p>
+      <p id="paragraph" class="text">Dê uma cor para este parágrafo!</p>
       <h4 id="subtitle">Subtítulo</h4>
-      <p id="second-paragraph">Segundo parágrafo!</p>
+      <p id="second-paragraph" class="text">Segundo parágrafo!</p>
     </header>
     <script>
       const paragraph = document.getElementById("paragraph");
@@ -15,7 +15,13 @@
       const secondParagraph = document.getElementById("second-paragraph");
       secondParagraph.style.textAlign = "center";
       const subtitle = document.getElementById("subtitle");
-      subtitle.innerHTML = "O subtítulo deveria vir antes do parágrafo kakaka"
+      subtitle.innerHTML = "O subtítulo deveria vir antes do parágrafo kakaka"; 
+
+      const textosParagrafos = document.getElementsByClassName('text');
+      textosParagrafos[0].style.backgroundColor = 'yellow';
+      const subtitleAsTag = document.getElementsByTagName('h4');
+      subtitleAsTag[0].style.color = 'blue';
+      
     </script>
   </body>
 </html>
