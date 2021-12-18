@@ -33,7 +33,7 @@ function correctNameH1() {
   const correctedH1 = document.getElementsByClassName("title")[0];
   correctedH1.innerText = correctedH1.innerText.replace(
     /JavaEscripito/gi,
-    "Script"
+    "Javascript"
   );
 }
 
