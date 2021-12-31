@@ -10,8 +10,7 @@
   
 #content {
     font-size: 18px;
-    margin-left: 25%;    
-    border: 3px solid red;
+    margin-left: 25%;        
     text-align: center;
     overflow: auto;
     font-family: helvetica, sans-serif;   
@@ -34,8 +33,7 @@
     font-size: 18px;
     width: 25%;
     display: inline-block;
-    border-right: 1px solid #b6b2b2;
-    border-bottom: 1px solid #b6b2b2;   
+    border: 1px solid #b6b2b2;    ;   
     position: fixed;
     font-family: helvetica, sans-serif;
 } 
