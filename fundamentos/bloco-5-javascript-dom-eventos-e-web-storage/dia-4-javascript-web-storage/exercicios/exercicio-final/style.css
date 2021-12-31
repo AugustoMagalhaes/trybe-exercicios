@@ -5,6 +5,7 @@
 #main-header {
     border-bottom: 1px solid #b6b2b2;  
     padding: 10px 10px;
+    font-family: Helvetica, sans-serif;
 }
   
 #content {
@@ -12,7 +13,8 @@
     margin-left: 25%;    
     border: 3px solid red;
     text-align: center;
-    overflow: auto;   
+    overflow: auto;
+    font-family: helvetica, sans-serif;   
 }
   
 #content header {
@@ -35,6 +37,7 @@
     border-right: 1px solid #b6b2b2;
     border-bottom: 1px solid #b6b2b2;   
     position: fixed;
+    font-family: helvetica, sans-serif;
 } 
 
 #author {
