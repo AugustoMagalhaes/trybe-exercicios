@@ -1,10 +1,18 @@
 * {
-    margin: 0px;    
+    margin: 0px;         
 }
-  
+
+body {
+    
+}
+
+main {
+    
+}
+
 #main-header {
     border-bottom: 1px solid #b6b2b2;  
-    padding: 10px 10px;
+    padding: 1vh 1vh;
     font-family: Helvetica, sans-serif;
 }
   
@@ -13,16 +21,18 @@
     margin-left: 25%;        
     text-align: center;
     overflow: auto;
-    font-family: helvetica, sans-serif;   
+    font-family: helvetica, sans-serif;    
+    height: 92.8vh;  
 }
   
 #content header {
     margin-left: 10px;
+    margin-top: 0.5vh;
 }
   
 #citation {  
-    margin-left: 10px;
-    margin-top: 10px;
+    margin-left: 1.5vh;
+    margin-top: 1.5vh;
 }
   
 .verse {
@@ -40,7 +50,7 @@
 
 #author {
     display: inline-block;
-    padding: 10px;    
+    padding: 1.5vh;    
 }
 
   
