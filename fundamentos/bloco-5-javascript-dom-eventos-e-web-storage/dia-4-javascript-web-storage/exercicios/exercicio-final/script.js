@@ -4,6 +4,7 @@ const newBgColor = document.getElementById('new-bgcolor');
 const newColor = document.getElementById('new-color');
 const newTextSize = document.getElementById('new-textsize');
 const newLineHeight = document.getElementById('new-lineheight');
+const selectFontFamily = document.getElementById('select-fontfamily');
 
 function setBgColor() {
     for (let text of targetText) {
@@ -28,7 +29,15 @@ function setTextSize() {
 newTextSize.addEventListener('change', setTextSize);
 
 function setLineHeight() {
-    targetArticle.style.lineHeight = 
+    targetArticle.style.lineHeight = newLineHeight.value;
 }
 
+newLineHeight.addEventListener('change', setLineHeight);
+
+function setFontFamily() {
+    const optionFontFamily = selectFontFamily.options[selectFontFamily.selectedIndex];
+    targetArticle.style.fontFamily = optionFontFamily.value;
+}
+
+selectFontFamily.addEventListener('change', setFontFamily);
 
