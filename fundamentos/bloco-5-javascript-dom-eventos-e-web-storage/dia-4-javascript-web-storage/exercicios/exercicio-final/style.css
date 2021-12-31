@@ -18,7 +18,7 @@ main {
   
 #content {
     font-size: 18px;
-    margin-left: 25%;        
+    margin-left: 30%;        
     text-align: center;
     overflow: auto;
     font-family: helvetica, sans-serif;    
@@ -41,12 +41,17 @@ main {
   
 #editing-sidebar {
     font-size: 18px;
-    width: 25%;
+    padding: 10px;
+    width: 30%;
     display: inline-block;
     border: 1px solid #b6b2b2;    ;   
     position: fixed;
     font-family: helvetica, sans-serif;
-} 
+}
+
+#editing-sidebar section {
+    padding: 5px;
+}
 
 #author {
     display: inline-block;
