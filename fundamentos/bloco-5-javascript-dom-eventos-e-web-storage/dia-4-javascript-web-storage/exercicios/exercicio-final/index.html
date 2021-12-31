@@ -2,71 +2,75 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Editor de texto com WebStorage</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Editor de texto com WebStorage</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <header id="main-header">
-    <h1>Leitor de conteúdo escrito</h1>
-  </header>
-  <main>
-    <aside id="editing-sidebar">
-      <section>
-        <label for="change-bgcolor">Escolha a nova cor de fundo:</label>
-        <input type="color" id="new-bgcolor" name="change-bgcolor" value="#000000">
-      </section>
-      <section>
-        <label for="change-color">Escolha a nova cor do texto:</label>
-        <input type="color" id="change-color" name="change-color" value="#000000">
-      </section>
-      <section>
-        <label for="new-textsize">Novo tamanho do texto (padrão: 16):</label>
-        <input type="number" id="new-textsize" name="new-textsize" min="2" max="100" step="2" value="16">
-      </section>
-      <section>
-        <label for="new-lineheight">Novo tamanho espaçamento entre linhas (padrão: 1.2):</label>
-        <input type="number" id="new-lineheight" name="new-lineheight" min="0.2" max="30" step="0.1" value="1.2">
-      </section>
-      <section>
-        <label for="select-fontfamily">Nova fonte do texto:</label>
-        <select name="select-fontfamily" id="select-fonftfamily">Lista
-          <option value="helvetica">Helvetica</option>
-          <option value="arial">Arial</option>
-          <option value="verdana">Verdana</option>
-          <option value="times-new-roman">Times new Roman</option>
-          <option value="serif">serif</option>
-        </select>
-      </section>
-    </aside>
-    <article id="content">
-      <header>
-        <h2>Citação de J.R.R Tolkien</h2>
-      </header>
-      <section id="citation">
-        <p class="verse">
-          Nem tudo o que reluz é ouro,
-          Nem todos os que vagueiam estão perdidos;
-          O velho que é forte não murcha,
-          Raízes profundas não são atingidas pela geada.
-        </p>
-        <p class="verse">
-          Das cinzas um fogo deve ser acordado,
-          Uma luz das sombras brotará;
-          Renovada será a lâmina que estava quebrada,
-          O sem coroa novamente será rei.
-          J.R.R. Tolkien
-        </p>
-        <span id="author">J.R.R. Tolkien</span>
-        <footer>* O senhor dos Anéis</footer>
-      </section>
-    </article>
-    
+    <header id="main-header">
+        <h1>Leitor de conteúdo escrito</h1>
+    </header>
+    <main>
+        <aside id="editing-sidebar">
+            <section>
+                <label for="change-bgcolor">Escolha a nova cor de fundo:</label>
+                <input type="color" id="new-bgcolor" name="change-bgcolor" value="#000000">
+            </section>
+            <section>
+                <label for="change-color">Escolha a nova cor do texto:</label>
+                <input type="color" id="change-color" name="change-color" value="#000000">
+            </section>
+            <section>
+                <label for="new-textsize">Novo tamanho do texto (padrão: 18):</label>
+                <input type="number" id="new-textsize" name="new-textsize" min="2" max="100" step="2" value="16">
+            </section>
+            <section>
+                <label for="new-lineheight">Novo tamanho espaçamento entre linhas (padrão: 1.2):</label>
+                <input type="number" id="new-lineheight" name="new-lineheight" min="0.2" max="30" step="0.1"
+                    value="1.2">
+            </section>
+            <section>
+                <label for="select-fontfamily">Nova fonte do texto:</label>
+                <select name="select-fontfamily" id="select-fonftfamily">Lista
+                    <option value="helvetica">Helvetica</option>
+                    <option value="arial">Arial</option>
+                    <option value="verdana">Verdana</option>
+                    <option value="times-new-roman">Times new Roman</option>
+                    <option value="serif">serif</option>
+                </select>
+            </section>
+        </aside>
+        <article id="content">
+            <header>
+                <h2>até mais</h2>
+            </header>
+            <section id="citation">
+                <p class="verse">Até tu, matéria bruta,</p>
+                <p class="verse">até tu, madeira, massa e músculo,</p>
+                <p class="verse">vodka, fígado e soluço,</p>
+                <p class="verse">luz de vela, papel, carvão e nuvem,</p>
+                <p class="verse">pedra, carne de abacate, água de chuva,</p>
+                <p class="verse">unha, montanha, ferro em brasa,</p>
+                <p class="verse">até vocês sentem saudade,</p>
+                <p class="verse">queimadura de primeiro grau,</p>
+                <p class="verse">vontade de voltar pra casa?</p>
+                <p class="verse"><br></p>
+                <p class="verse">Argila, esponja, mármore, borracha</p>
+                <p class="verse">cimento, aço, vidro, vapor, pano e cartilagem,</p>
+                <p class="verse">tinta, cinza, casca de ovo, grão de areia,</p>
+                <p class="verse">primeiro dia de outono, a palavra primavera,</p>
+                <p class="verse">número cinco, o tapa na cara, a rima rica,</p>
+                <p class="verse">a vida, a idade média, a força velha,</p>
+                <p class="verse">até tu, minha cara matéria,</p>
+                <p class="verse">lembra quando a gente era apenas uma ideia?</p>
+                <span id="author"><strong>Paulo Leminski</strong></span>
+                <footer>* <strong>Toda poesia.</strong> 1ª ed. São Paulo: Companhia das Letras, 2013.</footer>
+            </section>
+        </article>
+    </main>
 
-  </main>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
