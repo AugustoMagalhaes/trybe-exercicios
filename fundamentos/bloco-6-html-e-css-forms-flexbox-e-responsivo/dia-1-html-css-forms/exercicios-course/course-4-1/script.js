@@ -13,3 +13,10 @@ function lazyCheckbox(event) {
 
 INPUT_CHECKBOX.addEventListener('click', lazyCheckbox);
 
+function inputAlpha(event) {
+  if (event.key !== 'a') {
+    event.preventDefault();
+  }
+}
+
+INPUT_TEXT.addEventListener('keypress', inputAlpha);
