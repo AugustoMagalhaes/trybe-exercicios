@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <fieldset>
+    <label for="user-name">Nome:
+      <input type="text" name="user-name" id="user-name" maxlength="40" required>
+    </label>
+    <label for="user-email">Email:
+      <input type="email" name="user-email" id="user-email" maxlength="50" required>
+    </label>
+    <label for="user-cpf">CPF:
+      <input type="text" name="user-email" id="user-email" maxlength="11" required>
+    </label>
+    <label for="user-adress">Endereço:
+      <input type="text" name="user-adress" id="user-adress" maxlength="200" required>
+    </label>
+    <label for="user-city">Cidade:
+      <input type="text" name="user-city" id="user-city" maxlength="28" required>
+    </label>
+    <label for="user-state">Estado:
+      <select name="usr-state" id="user-state" required>        
+      </select>
+    </label>
+    <label for="user-dwelling" name="user-dwelling">Tipo de moradia:
+      <label for="user-house">
+        <input type="radio" name="user-dwelling" id="user-house" required>Casa
+      </label>
+      <label for="user-apartment">
+        <input type="radio" name="user-dwelling" id="user-apartment" required>Apartamento        
+      </label>
+
+  </fieldset>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
