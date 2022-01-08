@@ -23,16 +23,19 @@ body {
 
 .menu-container {  
   display: flex;
-  flex-basis: 500px;
-  order: 2;  
+  flex-grow: 1;
+  flex-basis: 500px;    
+  order: 2;
 }
 
-.menu-container ul {
-  display: flex;  
+.menu-container ul {  
+  display: flex;
+  
+  justify-content: space-evenly;
   width: 100%;
 }
 
-.menu-container li {
+.menu-container li {  
   color: white;
   font-weight: 500;
   font-size: 1.3rem;
