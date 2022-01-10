@@ -83,3 +83,10 @@ p strong {
     display: inline-block;
   }
 }
+
+@media screen and (max-width: 500px) {
+  p.trick {
+    display: inline-block;
+    color: red;
+  }
+}
