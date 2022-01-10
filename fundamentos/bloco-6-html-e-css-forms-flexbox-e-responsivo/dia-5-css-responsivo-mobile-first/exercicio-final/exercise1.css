@@ -70,3 +70,17 @@ figcaption {
   }
   
 }
+
+@media screen and (min-width: 500px) and (max-width: 1300px) {
+  * {
+    font-size: 20px;
+    margin: 12px;
+  }
+  
+  body {
+    background-color: rgb(158, 180, 116);
+    max-width: 1200px;
+  }
+
+
+}
