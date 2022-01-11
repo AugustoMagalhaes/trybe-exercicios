@@ -1,0 +1,36 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+p {
+  text-indent: 16px;
+  text-align: justify;
+}
+
+@media screen and (max-width: 600px) {
+  * {
+    margin: 2px;
+    line-height: 2;
+  }
+
+  body {
+    background-color: rgb(162, 162, 196);
+    font-size: 18px;
+  }
+
+  aside, aside ul {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  h1 {
+    display: inline-block;
+  }
+}
