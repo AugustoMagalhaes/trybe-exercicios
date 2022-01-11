@@ -89,3 +89,42 @@ p {
     margin: 0;
   }
 }
+
+@media screen and (min-width: 1001px) {
+  * {
+    margin: 12px;
+    line-height: 2.4;
+  }
+
+  body {
+    background-color: rgb(210, 250, 173);
+    font-size: 30px;
+  }
+
+  header p {
+    font-weight: 600;
+    font-size: 52px;
+    text-align: center;
+  }
+
+  .container, .container ul, aside, aside ul, footer {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .main-content {    
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .main-content h1 {
+    font-size: 52px;
+    text-align: center;
+    line-height: 2.4em;
+    margin: 0;
+  }
+}
