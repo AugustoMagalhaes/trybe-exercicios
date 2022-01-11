@@ -23,9 +23,9 @@ p {
     font-size: 18px;
   }
 
-  .container p {
+  header p {
     font-weight: 600;
-    font-size: 30px;
+    font-size: 36px;
     text-align: center;
   }
 
@@ -44,8 +44,48 @@ p {
   }
 
   .main-content h1 {
-    text-align: center;  
+    text-align: center;
+    font-size: 36px;
     margin: 0;
   }
   
+}
+
+@media screen and (min-width: 601px) and (max-width: 1000px) {
+  * {
+    margin: 8px;
+    line-height: 2.2;
+  }
+
+  body {
+    background-color: rgb(233, 232, 171);
+    font-size: 24px;
+  }
+
+  header p {
+    font-weight: 600;
+    font-size: 44px;
+    text-align: center;
+  }
+
+  .container, .container ul, aside, aside ul, footer {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .main-content {    
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .main-content h1 {
+    font-size: 44px;
+    text-align: center;
+    line-height: 2em;
+    margin: 0;
+  }
 }
