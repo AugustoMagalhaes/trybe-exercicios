@@ -4,6 +4,7 @@ html {
 
 *, *:before, *:after {
   box-sizing: inherit;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 p {
@@ -13,7 +14,7 @@ p {
 
 @media screen and (max-width: 600px) {
   * {
-    margin: 2px;
+    margin: 4px;
     line-height: 2;
   }
 
@@ -22,15 +23,29 @@ p {
     font-size: 18px;
   }
 
-  aside, aside ul {
+  .container p {
+    font-weight: 600;
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .container, .container ul, aside, aside ul, footer {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    
   }
 
-  h1 {
-    display: inline-block;
+  .main-content {    
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
   }
+
+  .main-content h1 {
+    text-align: center;  
+    margin: 0;
+  }
+  
 }
