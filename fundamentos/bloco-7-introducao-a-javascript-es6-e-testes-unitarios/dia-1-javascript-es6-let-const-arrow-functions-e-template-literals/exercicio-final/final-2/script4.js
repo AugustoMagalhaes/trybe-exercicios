@@ -8,3 +8,10 @@ const replaceString = (str) => {
 console.log(replaceString('teste'));
 console.log(`aqui costumava ser um \'x'`);
 
+var mainSkills = ['bash', 'HTML', 'CSS', 'javascript', 'soft skills'];
+
+const replaceAndAdd = (str) => {
+    return `${replaceString(str)}. Minhas 5 melhores habilidades aprendidas na Trybe são: ${[...mainSkills]}.`
+}
+
+console.log(replaceAndAdd('#VQV'));
