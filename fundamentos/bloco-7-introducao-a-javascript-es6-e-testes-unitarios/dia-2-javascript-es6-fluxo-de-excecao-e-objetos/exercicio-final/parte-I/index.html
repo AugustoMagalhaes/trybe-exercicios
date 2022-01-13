@@ -23,6 +23,9 @@
         if (!value1 || !value2) {
           throw new Error('Digite ambos os números.')
         }
+        if (isNaN(value1) || isNaN(value2)) {
+          throw new Error('Digite apenas números.')
+        }
       } catch (error) {
         document.getElementById('result').innerHTML = error.message;
         return
