@@ -19,13 +19,12 @@ const lesson3 = {
 };
 
 const setProp = (obj, key, value) => {
-  obj[key] = value;
-  console.log(obj.key)
+  obj[key] = value;  
   return obj[key];
 }
 
 setProp(lesson2, 'turno', 'noite');
-console.log(lesson2);
+console.log('oi', lesson2);
 
 const displayObjKeys = (obj) => {
   return Object.keys(obj);
@@ -44,4 +43,9 @@ const displayObjValues = (obj) => {
 }
 
 console.log(displayObjValues(lesson3));
+
+const allLessons = {};
+// hard destructuring
+[allLessons['lesson1'], allLessons['lesson2'], allLessons['lesson3']] = [{...lesson1}, {...lesson2}, {...lesson3}];
+console.log(allLessons);
 
