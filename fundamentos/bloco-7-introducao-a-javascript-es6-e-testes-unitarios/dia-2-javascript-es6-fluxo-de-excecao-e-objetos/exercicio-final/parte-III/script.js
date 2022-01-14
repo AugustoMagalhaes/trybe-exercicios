@@ -32,3 +32,9 @@ const displayObjKeys = (obj) => {
 }
 
 console.log(displayObjKeys(lesson1));
+
+const displayLength = (obj) => {
+  return Object.keys(obj).length;
+}
+
+console.log(displayLength(lesson1));
