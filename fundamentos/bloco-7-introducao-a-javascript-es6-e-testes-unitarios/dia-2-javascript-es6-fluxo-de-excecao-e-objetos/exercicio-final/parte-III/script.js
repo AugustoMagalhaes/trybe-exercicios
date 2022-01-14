@@ -25,4 +25,10 @@ const setProp = (obj, key, value) => {
 }
 
 setProp(lesson2, 'turno', 'noite');
-console.log(lesson2)
+console.log(lesson2);
+
+const displayObjKeys = (obj) => {
+  return Object.keys(obj);
+}
+
+console.log(displayObjKeys(lesson1));
