@@ -14,7 +14,8 @@ const recursiveFatorial = (n) => {
   if (Number.isInteger(n) && n >= 0) {
     console.log('n eh: ', n)
     return (n === 0) ? 1 : (n * recursiveFatorial(n - 1));
-  }   
+  }
+  // https://backefront.com.br/como-fazer-fatorial-recursivo-javascript/
 }
 
 console.log(recursiveFatorial(4));
