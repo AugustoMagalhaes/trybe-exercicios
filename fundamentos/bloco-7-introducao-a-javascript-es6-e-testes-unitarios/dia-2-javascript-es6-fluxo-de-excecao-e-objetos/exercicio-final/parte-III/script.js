@@ -65,3 +65,10 @@ const getValueByNumber = (obj, index) => {
 }
 
 console.log(getValueByNumber(lesson2, 2));
+
+const verifyPair = (obj, key, value) => {
+  return (obj[key] === value) ? true : false;
+}
+
+console.log(verifyPair(lesson1, 'turno', 'manhã'));
+console.log(verifyPair(lesson1, 'turno', 'noite'));
