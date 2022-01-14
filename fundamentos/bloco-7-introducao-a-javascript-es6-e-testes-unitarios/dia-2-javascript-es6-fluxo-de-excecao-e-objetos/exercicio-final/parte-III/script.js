@@ -37,4 +37,11 @@ const displayLength = (obj) => {
   return Object.keys(obj).length;
 }
 
-console.log(displayLength(lesson1));
+console.log(displayLength(lesson2));
+
+const displayObjValues = (obj) => {
+  return Object.values(obj);
+}
+
+console.log(displayObjValues(lesson3));
+
