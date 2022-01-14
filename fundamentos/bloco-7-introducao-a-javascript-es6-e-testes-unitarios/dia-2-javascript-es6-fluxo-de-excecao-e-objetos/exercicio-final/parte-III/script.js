@@ -24,7 +24,7 @@ const setProp = (obj, key, value) => {
 }
 
 setProp(lesson2, 'turno', 'noite');
-console.log('oi', lesson2);
+console.log(lesson2);
 
 const displayObjKeys = (obj) => {
   return Object.keys(obj);
@@ -45,7 +45,16 @@ const displayObjValues = (obj) => {
 console.log(displayObjValues(lesson3));
 
 const allLessons = {};
-// hard destructuring
+// hardcode destructuring
 [allLessons['lesson1'], allLessons['lesson2'], allLessons['lesson3']] = [{...lesson1}, {...lesson2}, {...lesson3}];
 console.log(allLessons);
 
+const getAmountOfStudents = (obj) => {
+  let amountStudents = 0;
+  for (let key of Object.keys(obj)) {
+    amountStudents += obj[key]['numeroEstudantes']
+  }  
+  return amountStudents;
+}
+
+console.log('quantidade de estudantes: ', getAmountOfStudents(allLessons));
