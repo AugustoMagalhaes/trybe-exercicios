@@ -58,3 +58,10 @@ const getAmountOfStudents = (obj) => {
 }
 
 console.log('quantidade de estudantes: ', getAmountOfStudents(allLessons));
+
+const getValueByNumber = (obj, index) => {
+  const objKeys = Object.keys(obj);
+  return objKeys[index];
+}
+
+console.log(getValueByNumber(lesson2, 2));
