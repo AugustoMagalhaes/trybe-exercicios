@@ -11,5 +11,9 @@ describe('Testando vários retornos da funçao "myFizzBuzz" ', () => {
 
     it('Checa se myFizzBuzz(25) retorna "buzz', () => {
         expect(myFizzBuzz(25)).toBe('buzz');
+    });
+
+    it('Checa se myFizzBuzz(7) retorna o proprio numero', () => {
+        expect(myFizzBuzz(7)).toBe(7);
     })
 });
