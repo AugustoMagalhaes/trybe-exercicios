@@ -24,4 +24,4 @@ function encode(phrase) {
     return joinedPhrase2;
   }
 
-  module.exports = encode, decode;
+module.exports = {encode, decode};
