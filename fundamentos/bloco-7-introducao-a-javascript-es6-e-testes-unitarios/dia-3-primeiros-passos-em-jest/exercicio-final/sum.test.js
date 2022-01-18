@@ -14,5 +14,11 @@ describe('Testando a funçao sum', () => {
         expect( () => {
             sum(4,'5');
         }).toThrow();        
+    });
+
+    it('Testando se o erro "parameters must be numbers" é lançado quando um dos argumentos é do tipo string ', () => {
+        expect( () => {
+            sum(4,'5');
+        }).toThrowError('parameters must be numbers');
     })
 })
