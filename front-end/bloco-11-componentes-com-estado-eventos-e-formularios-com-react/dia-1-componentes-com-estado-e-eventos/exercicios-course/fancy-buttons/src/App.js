@@ -14,10 +14,9 @@ class App extends React.Component {
 
   handleClick(event) {
     const { name, textContent } = event.target;
-    const numberOfClicks = parseInt(textContent.split(': ')[1]);
-    this.setState((previousState3, _props) => ({
-      [name]: numberOfClicks + 1,
-    }))
+    this.setState((previousState, _props) => ({
+      [name]: previousState[name] + 1,
+    } ))
   }
 
   render() {
