@@ -2,8 +2,8 @@ button:nth-of-type(1) {
   background-color: blue;
   color: white;
   margin: 20px 40px;
-  width: 100px;
-  height: 100px;
+  min-width: 200px;
+  min-height: 100px;
   font-size: 30px;
 }
 
@@ -11,8 +11,8 @@ button:nth-of-type(2) {
   background-color: red;
   color: white;
   margin: 20px 40px;
-  width: 100px;
-  height: 100px;
+  min-width: 200px;
+  min-height: 100px;
   font-size: 30px;
 }
 
@@ -20,7 +20,7 @@ button:nth-of-type(3) {
   background-color: green;
   color: white;
   margin: 20px 40px;
-  width: 100px;
-  height: 100px;
+  min-width: 200px;
+  min-height: 100px;
   font-size: 30px;
 }
