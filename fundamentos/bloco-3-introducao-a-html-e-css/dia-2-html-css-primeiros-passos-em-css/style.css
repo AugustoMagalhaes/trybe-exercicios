@@ -1,0 +1,30 @@
+body {
+    font-size: 16px;
+    background-color: #eed1a5;
+}
+
+h1 {
+    font-size: 65px;
+    color: #ffa500;
+    font-family: sans-serif;
+    text-align: center;
+    text-decoration: underline;
+}
+
+p {
+    font-weight: 600;
+    font-size: 3em;
+}
+
+ul {
+    background-color: #165eb7;
+}
+
+.bg-color {
+    background-color: #15b730;
+}
+
+li {
+    font-style: italic;
+    line-height: 25px;
+}
