@@ -25,7 +25,9 @@ class App extends React.Component {
     const { name } = event.target;
     this.setState((previousState, _props) => ({
       [name]: previousState[name] + 1,
-    }))
+    }), () => { 
+      console.log(this.changeColor(name)) 
+    })
   }
 
   componentDidUpdate(_prevProps, prevState) {
