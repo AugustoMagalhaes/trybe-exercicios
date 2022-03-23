@@ -2,7 +2,7 @@ import React from 'react';
 import { screen } from '@testing-library/react';
 import renderWithRouter from './renderWithRouter';
 import userEvent from '@testing-library/user-event';
-import App from './App';
+import App, { About } from './App';
 
 it('deve renderizar o componente App', () => {
   renderWithRouter(<App />);
@@ -22,6 +22,14 @@ it('deve renderizar o componente Sobre', () => {
 
   const { pathname } = history.location;
   expect(pathname).toBe('/about');
+
+  const aboutTitle = screen.getByRole('heading',
+    { name: 'Você está na página Sobre' });
+  expect(aboutTitle).toBeInTheDocument();
+});
+
+it('deve renderizar o componente About (apenas componente)', () => {
+  renderWithRouter(<About />);
 
   const aboutTitle = screen.getByRole('heading',
     { name: 'Você está na página Sobre' });
