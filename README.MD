@@ -49,7 +49,11 @@ Este repositório ja contém alguns arquivos padrões, ao executar `npm install`
 
 - sequelize-cli
 
-Será necessário configurar o arquivo `config/config.json` com os dados de seu servidor.
+Será necessário configurar o arquivo `config/config.js` com os dados de seu servidor.
+
+- Crie um arquivo .env para configurar suas variáveis de ambiente
+
+- O arquivo .env.example contém um exemplo das variáveis de ambiente que devem ser configuradas
 
 Após, utilize os comandos:
 
