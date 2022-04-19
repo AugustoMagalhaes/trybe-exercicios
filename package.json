@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/tryber/exercise-sequelize-associations#readme",
   "dependencies": {
+    "dotenv": "^16.0.0",
     "express": "^4.17.1",
     "mysql2": "^2.2.5",
     "sequelize": "^6.3.5"
