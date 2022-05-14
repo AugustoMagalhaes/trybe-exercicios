@@ -2,15 +2,16 @@
 ---
 
 #### Desinstalando versões anteriores do Docker
-- Para desinstalar versões anteriores do Docker na sua máquina local, digite o seguinte comando no terminal:
-<br>
+- Para desinstalar versões anteriores do Docker na sua máquina local, digite o seguinte comando no terminal: <br>
+
   ```sudo apt-get remove docker* containerd runc```
 **Obs:** Caso queira desinstalar o Docker Engine como um todo, rode o seguinte comando: <br>
 
   ```sudo apt-get purge docker-ce docker-ce-cli containerd.io ```
   <br>
+
   Para remover os contêineres e informações personalizadas na sua máquina, digite os seguintes comandos:<br>
-  
+
   ```sudo rm -rf /var/lib/docker ```
   ```sudo rm -rf /var/lib/containerd ```
 <br>
@@ -35,11 +36,13 @@
 
 - Para adicionar uma camada de segurança, a documentação oficial do Docker recomenda a utilização de uma chave GPG de acesso remoto ao repositório:
 <br>
+
   ``` curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg ```
 <br>
 
 - ... e por fim, adicionamos o repositório oficial:
 <br>
+
   ```
   echo \
     "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" \
