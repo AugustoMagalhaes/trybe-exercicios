@@ -30,7 +30,16 @@ app.get('/recipes', function (req, res) {
 
 app.get('/drinks', function (req, res) {
   res.json(orderedDrinks);
-})
+});
+
+app.get('/recipes/:id', function (req, res) {
+  const { id } = req.params;
+  const recipe = recipes.find((r) => r.id === Number(id));
+
+  if (!recipe) return res.status(404).json({ message: 'Recipe not found!'});
+
+  res.status(200).json(recipe);
+});
 
 app.listen(3001, () => {
   console.log('Aplicação ouvindo na porta 3001');
