@@ -11,6 +11,8 @@ const recipes = [
   { id: 3, name: 'Macarrão com molho branco', price: 35.0, waitTime: 25 },
 ];
 
+const orderedRecipes = recipes.sort((a,b) => a.name.localeCompare(b.name));
+
 const drinks = [
 	{ id: 1, name: 'Refrigerante Lata', price: 5.0 },
 	{ id: 2, name: 'Refrigerante 600ml', price: 8.0 },
@@ -20,12 +22,14 @@ const drinks = [
 	{ id: 6, name: 'Água Mineral 500 ml', price: 5.0 },
 ];
 
+const orderedDrinks = drinks.sort((a,b) => a.name.localeCompare(b.name));
+
 app.get('/recipes', function (req, res) {
-  res.json(recipes);
+  res.json(orderedRecipes);
 });
 
 app.get('/drinks', function (req, res) {
-  res.json(drinks);
+  res.json(orderedDrinks);
 })
 
 app.listen(3001, () => {
