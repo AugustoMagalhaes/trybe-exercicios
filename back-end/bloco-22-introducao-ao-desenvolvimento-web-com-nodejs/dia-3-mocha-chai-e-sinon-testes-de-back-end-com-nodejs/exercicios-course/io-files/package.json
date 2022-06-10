@@ -4,7 +4,7 @@
   "description": "TDD com mocha chai",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test.js"
+    "test": "mocha io-test/test.js"
   },
   "author": "",
   "license": "ISC",
