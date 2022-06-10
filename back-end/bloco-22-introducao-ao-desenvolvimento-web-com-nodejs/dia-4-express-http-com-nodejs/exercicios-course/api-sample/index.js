@@ -1,6 +1,9 @@
 /* index.js */
 const express = require('express');
 const app = express();
+const cors = require('cors');
+
+app.use(cors());
 
 const recipes = [
   { id: 1, name: 'Lasanha', price: 40.0, waitTime: 30 },
