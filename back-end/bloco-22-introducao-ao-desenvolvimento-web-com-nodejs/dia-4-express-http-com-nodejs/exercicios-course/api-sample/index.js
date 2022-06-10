@@ -33,10 +33,11 @@ app.get('/drinks', function (req, res) {
 });
 
 app.get('/recipes/search', function (req, res) {
-  const { name } = req.query;
-  const filteredRecipes = recipes.filter((r) => r.name.includes(name));
-  res.status(200).json(filteredRecipes);
-});
+	const { name, maxPrice } = req.query;
+	const filteredRecipes = recipes.filter((r) => r.name.includes(name) 
+    && r.price < Number(maxPrice));
+	res.status(200).json(filteredRecipes);
+})
 
 app.get('/recipes/:id', function (req, res) {
   const { id } = req.params;
