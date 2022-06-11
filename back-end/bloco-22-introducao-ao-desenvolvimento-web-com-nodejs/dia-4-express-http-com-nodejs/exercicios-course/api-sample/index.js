@@ -1,9 +1,12 @@
 /* index.js */
 const express = require('express');
+const bodyParser = require('body-parser');
+
 const app = express();
 const cors = require('cors');
 
 app.use(cors());
+app.use(bodyParser.json());
 
 const recipes = [
   { id: 1, name: 'Lasanha', price: 40.0, waitTime: 30 },
