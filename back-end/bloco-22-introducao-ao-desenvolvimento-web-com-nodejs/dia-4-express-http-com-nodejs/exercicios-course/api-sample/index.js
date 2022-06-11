@@ -66,6 +66,13 @@ app.post('/recipes', function (req, res) {
   res.status(201).json({ message: 'Recipe created successfully!'});
 });
 
+app.get('/validateToken', function (req, res) {
+  const token = req.headers.authorization;
+  if (token.length !== 16) return res.status(401).json({message: 'Invalid Token!'});
+
+  res.status(200).json({message: 'Valid Token!'});
+});
+
 app.listen(3001, () => {
   console.log('Aplicação ouvindo na porta 3001');
 });
