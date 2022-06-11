@@ -60,6 +60,12 @@ app.get('/drinks/:id', (req, res) => {
   res.status(200).json(drink);
 });
 
+app.post('/recipes', function (req, res) {
+  const { id, name, price } = req.body;
+  recipes.push({ id, name, price});
+  res.status(201).json({ message: 'Recipe created successfully!'});
+});
+
 app.listen(3001, () => {
   console.log('Aplicação ouvindo na porta 3001');
 });
