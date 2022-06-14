@@ -1,0 +1,58 @@
+* {
+    margin: 0px;
+}
+
+main {
+    height: 92.9vh;
+}
+
+#main-header {
+    border-bottom: 1px solid #b6b2b2;  
+    padding: 1vh 1vh;
+    font-family: Helvetica, sans-serif;
+}
+  
+#content {
+    font-size: 18px;
+    margin-left: 31%;
+    width: 69%;      
+    text-align: center;
+    overflow-y: auto;
+    font-family: helvetica, sans-serif;    
+   /*  height: 92.9vh; */
+   height: 100%;
+    box-sizing: border-box;    
+}
+  
+#content header {
+    margin-left: 10px;
+    margin-top: 0.5vh;
+}
+  
+#citation {  
+    margin-left: 10px;
+    margin-top: 10px;
+}
+  
+.verse {
+    margin-left: 10px;
+}
+  
+#editing-sidebar {
+    font-size: 18px;
+    padding-left: 1%;
+    width: 30%;    
+    border-right: 1px solid #b6b2b2;     
+    height: 100%;
+    position: fixed;  
+    font-family: helvetica, sans-serif;
+}
+
+#editing-sidebar section {
+    padding: 5px;
+}
+
+#author {
+    display: inline-block;
+    padding: 1.5vh;    
+}
