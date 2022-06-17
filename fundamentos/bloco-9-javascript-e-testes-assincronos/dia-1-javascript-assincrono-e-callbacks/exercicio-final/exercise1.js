@@ -26,5 +26,7 @@ const jupiter = {
 };
 
 console.log(planetDistanceFromSun(mars)); // A 227900000 km
+
 console.log(planetDistanceFromSun(venus)); // B 108200000 km
+
 console.log(planetDistanceFromSun(jupiter)); // C 778500000 km
