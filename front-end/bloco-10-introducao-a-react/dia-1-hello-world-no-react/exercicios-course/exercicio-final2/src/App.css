@@ -1,0 +1,28 @@
+h1 {
+  margin: 5px 0px 0px 15px;
+  font-size: 48px;
+}
+
+ul {
+  display: inline-block;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding-left: 10px;
+  border: 2px solid lavender;
+  border-radius: 10px;
+  font-size: 32px;
+  font-style: italic;
+  
+}
+
+li {
+  font-size: 28px;
+  list-style: none;
+  font-style: normal;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 2px;
+}
