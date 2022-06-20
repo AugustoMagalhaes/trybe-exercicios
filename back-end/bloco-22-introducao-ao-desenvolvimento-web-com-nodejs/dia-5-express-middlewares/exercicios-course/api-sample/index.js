@@ -24,6 +24,13 @@ const drinks = [
 	{ id: 6, name: 'Água Mineral 500 ml', price: 5.0 },
 ];
 
+function validateName(req, res, next) {
+  const { name } = req.body;
+  if (!name || name === '') return res.status(400).json({ message: 'Invalid data!'});
+
+  next();
+};
+
 const orderedDrinks = drinks.sort((a,b) => a.name.localeCompare(b.name));
 
 app.get('/recipes', function (req, res) {
@@ -39,7 +46,7 @@ app.get('/recipes/search', function (req, res) {
 	const filteredRecipes = recipes.filter((r) => r.name.includes(name) 
     && r.price < Number(maxPrice));
 	res.status(200).json(filteredRecipes);
-})
+});
 
 app.get('/recipes/:id', function (req, res) {
   const { id } = req.params;
@@ -59,15 +66,7 @@ app.get('/drinks/:id', (req, res) => {
   res.status(200).json(drink);
 });
 
-app.post('/recipes',
-function (req, res, next) {
-  const { name } = req.body;
-  if (!name || name === '') return res.status(400).json({ message: 'Invalid data!'});
-
-  next();
-},
-
-  function (req, res) {
+app.post('/recipes', validateName, function (req, res) {
     const { id, name, price } = req.body;
     recipes.push({ id, name, price });
     res.status(201).json({ message: 'Recipe created successfully!' });
@@ -80,7 +79,7 @@ app.get('/validateToken', function (req, res) {
   res.status(200).json({message: 'Valid Token!'});
 });
 
-app.put('/recipes/:id', function (req, res) {
+app.put('/recipes/:id', validateName, function (req, res) {
   const { id } = req.params;
   const { name, price } = req.body;
   const recipeIndex = recipes.findIndex((r) => r.id === Number(id));
