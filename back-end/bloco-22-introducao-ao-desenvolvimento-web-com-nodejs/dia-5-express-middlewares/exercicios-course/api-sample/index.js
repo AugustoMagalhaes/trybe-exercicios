@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const cors = require('cors');
 
-const {validateName, validatePrice} = require('./middlewares');
+const {validateName, validatePrice, authMiddleware } = require('./middlewares');
 
 app.use(cors());
 app.use(bodyParser.json());
