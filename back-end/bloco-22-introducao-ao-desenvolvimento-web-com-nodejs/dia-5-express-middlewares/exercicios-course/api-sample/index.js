@@ -6,6 +6,12 @@ const cors = require('cors');
 
 const {validateName, validatePrice, authMiddleware } = require('./middlewares');
 
+app.get('/open', function (req, res) {
+  res.send('open!')
+});
+
+app.use(authMiddleware);
+
 app.use(cors());
 app.use(bodyParser.json());
 
@@ -74,7 +80,7 @@ app.get('/validateToken', function (req, res) {
   res.status(200).json({message: 'Valid Token!'});
 });
 
-app.put('/recipes/:id', validateName, function (req, res) {
+app.put('/recipes/:id', validateName, validatePrice, function (req, res) {
   const { id } = req.params;
   const { name, price } = req.body;
   const recipeIndex = recipes.findIndex((r) => r.id === Number(id));
