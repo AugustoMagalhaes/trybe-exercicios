@@ -59,10 +59,18 @@ app.get('/drinks/:id', (req, res) => {
   res.status(200).json(drink);
 });
 
-app.post('/recipes', function (req, res) {
-  const { id, name, price } = req.body;
-  recipes.push({ id, name, price});
-  res.status(201).json({ message: 'Recipe created successfully!'});
+app.post('/recipes',
+function (req, res, next) {
+  const { name } = req.body;
+  if (!name || name === '') return res.status(400).json({ message: 'Invalid data!'});
+
+  next();
+},
+
+  function (req, res) {
+    const { id, name, price } = req.body;
+    recipes.push({ id, name, price });
+    res.status(201).json({ message: 'Recipe created successfully!' });
 });
 
 app.get('/validateToken', function (req, res) {
