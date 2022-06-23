@@ -1,5 +1,20 @@
 const connection = require('./connection');
 
+// Cria uma string com o nome completo do autor
+const getNewAuthor = ({id, firstName, middleName, lastName}) => {
+    const fullName = [firstName, middleName, lastName]
+      .filter(Boolean)
+      .join(' ');
+  
+    return {
+    id,
+    firstName,
+    middleName,
+    lastName,
+    fullName,
+    };
+  };
+
 // Converte o nome dos campos de snake_case para camelCase
 const serialize = (authorData) => ({
 	id: authorData.id,
