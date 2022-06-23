@@ -5,7 +5,7 @@ const getNewAuthor = ({id, firstName, middleName, lastName}) => {
     const fullName = [firstName, middleName, lastName]
       .filter(Boolean)
       .join(' ');
-  
+
     return {
     id,
     firstName,
@@ -29,6 +29,7 @@ const getAll = async () => {
 	const [authors] = await connection.execute(
 		'SELECT id, first_name, middle_name, last_name FROM model_example.authors;',
 	);
+  console.log(authors);
 	return authors.map(serialize).map(getNewAuthor);
 };
 
