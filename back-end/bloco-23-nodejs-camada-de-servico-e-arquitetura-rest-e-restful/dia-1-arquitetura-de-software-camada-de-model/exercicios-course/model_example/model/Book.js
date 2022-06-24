@@ -25,6 +25,20 @@ const getByAuthorId = async (id) => {
   return booksByAuthorId;
 }
 
+const isBookValid = (title, author_id) => {
+  if (!title || typeof title !== 'string') return false;
+  if (!author_id || !Number.isInteger(author_id)) return false;
+
+  return true;
+}
+
+const createBook = async (title, author_id) => {
+  connection.execute(
+    'INSERT INTO model_example.books VALUES (?, ?, ?)',
+    [title, author_id]
+  )
+}
+
 module.exports = {
   getAll,
   getByAuthorId
