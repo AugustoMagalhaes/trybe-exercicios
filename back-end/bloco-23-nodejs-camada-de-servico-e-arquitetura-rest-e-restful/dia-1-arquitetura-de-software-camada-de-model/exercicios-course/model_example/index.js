@@ -1,7 +1,7 @@
 const express = require('express');
 
 const Author = require('./model/Author');
-const Books = require('./model/Book');
+const Book = require('./model/Book');
 
 const app = express();
 
@@ -11,15 +11,27 @@ app.get('/authors', async (_req, res) => {
   res.status(200).json(authors);
 });
 
+app.get('/authors/:id', async (req, res) => {
+	const { id } = req.params;
+
+	const author = await Author.getAuthorById(id);
+
+	if (!author) return res.status(404).json({ message: 'Autor não encontrado' });
+
+	res.status(200).json(author);
+});
+
 app.get('/books', async (_req, res) => {
-  const books = await Books.getAll();
+  const books = await Book.getAll();
 
   res.status(200).json(books);
 })
 
 app.get('/books/:id', async (req, res) => {
   const { id } = req.params;
-  const booksByAuthorId = await Books.getByAuthorId(id);
+  const booksByAuthorId = await Book.getByAuthorId(id);
+
+  if (!booksByAuthorId) return res.status(404).json({message: 'Livro não encontrado'});
 
   res.status(200).json(booksByAuthorId);
 })

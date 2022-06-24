@@ -1,9 +1,5 @@
 const connection = require('./connection');
 
-const getNewBook = ({id, title, author_id}) => {
-
-}
-
 const serialize = (bookData) => ({
 	id: bookData.id,
 	title: bookData.title,
@@ -23,11 +19,11 @@ const getByAuthorId = async (id) => {
     'SELECT id, title, author_id FROM model_example.books WHERE author_id = ?',
     [id]
   )
-  console.log(booksByAuthorId);
+  
+  if (booksByAuthorId.length === 0) return null;
+
   return booksByAuthorId;
 }
-
-getByAuthorId(2);
 
 module.exports = {
   getAll,
