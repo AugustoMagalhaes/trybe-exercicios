@@ -50,7 +50,22 @@ const getAuthorById = async (id) => {
 	});
 };
 
+const isValid = (firstName, middleName, lastName) => {
+	if (!firstName || typeof firstName !== 'string') return false;
+	if (!lastName || typeof lastName !== 'string') return false;
+	if (middleName && typeof middleName !== 'string') return false;
+
+	return true;
+};
+
+const create = async (firstName, middleName, lastName) => connection.execute(
+	'INSERT INTO model_example.authors (first_name, middle_name, last_name) VALUES (?,?,?)',
+	[firstName, middleName, lastName],
+);
+
 module.exports = {
 	getAll,
-  getAuthorById
+  getAuthorById,
+  isValid,
+  create,
 };
