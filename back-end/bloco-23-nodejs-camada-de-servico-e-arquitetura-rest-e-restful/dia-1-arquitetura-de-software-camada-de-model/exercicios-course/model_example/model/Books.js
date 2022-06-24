@@ -18,4 +18,6 @@ const getAll = async () => {
   return books.map(serialize);
 }
 
-getAll();
+module.exports = {
+  getAll,
+}
