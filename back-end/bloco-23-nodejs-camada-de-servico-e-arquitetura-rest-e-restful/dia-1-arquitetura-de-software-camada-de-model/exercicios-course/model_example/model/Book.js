@@ -18,6 +18,18 @@ const getAll = async () => {
   return books.map(serialize);
 }
 
+const getByAuthorId = async (id) => {
+  const [book] = await connection.execute(
+    'SELECT id, title, author_id FROM model_example.books WHERE author_id = ?',
+    [id]
+  )
+  console.log(book);
+  return book;
+}
+
+getByAuthorId(2);
+
 module.exports = {
   getAll,
+  getByAuthorId
 }
