@@ -41,5 +41,7 @@ const createBook = async (title, author_id) => {
 
 module.exports = {
   getAll,
-  getByAuthorId
+  getByAuthorId,
+  isBookValid,
+  createBook
 }
