@@ -1,7 +1,7 @@
 const express = require('express');
 
 const Author = require('./model/Author');
-const Books = require('./model/Books');
+const Books = require('./model/Book');
 
 const app = express();
 
