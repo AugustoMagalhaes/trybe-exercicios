@@ -1,29 +1,55 @@
-const Author = require('../services/Authors');
+const connection = require('./connection');
 
-const getAll = async (_req, res) => {
-  const authors = await Author.getAll();
+const getNewAuthor = (authorData) => {
+const { id, firstName, middleName, lastName } = authorData;
 
-  res.status(200).json(authors);
+const fullName = [firstName, middleName, lastName]
+  .filter((name) => name)
+  .join(' ');
+
+  return {
+    id,
+    firstName,
+    middleName,
+    lastName,
+    name: fullName,
+  };
 };
 
-const findById = async (req, res) => {
-  const { id } = req.params;
+const serialize = (authorData) => authorData.map((item) => getNewAuthor({
+  id: item.id,
+  firstName: item.first_name,
+  middleName: item.middle_name,
+  lastName: item.last_name,
+  }));
 
-  const author = await Author.findById(id);
-
-  if (!author) return res.status(404).json({ message: 'Author not found' });
-
-  res.status(200).json(author);
+const getAll = async () => {
+  const [authors] = await connection.execute(
+    'SELECT id, first_name, middle_name, last_name FROM model_example.authors;',
+  );
+  return serialize(authors);
 };
 
-const createAuthor = async (req, res) => {
-  const { first_name, middle_name, last_name } = req.body;
+const findById = async (id) => {
+  const query = `
+    SELECT id, first_name, middle_name, last_name 
+    FROM model_example.authors 
+    WHERE id = ?
+  `;
 
-  const author = await Author.createAuthor(first_name, middle_name, last_name);
+  const [authorData] = await connection.execute(query, [id]);
 
-  if (!author) return res.status(400).json({ message: 'Dados inválidos' });
+  if (authorData.length === 0) return null;
 
-  res.status(201).json(author);
+  return serialize(authorData)[0];
+};
+
+const createAuthor = async (firstName, middleName, lastName) => {
+  const [author] = await connection.execute(
+    'INSERT INTO model_example.authors (first_name, middle_name, last_name) VALUES (?, ?, ?)',
+    [firstName, middleName, lastName],
+  );
+  return [getNewAuthor({ id: author.insertId, firstName, middleName, lastName })];
 };
 
 module.exports = {
