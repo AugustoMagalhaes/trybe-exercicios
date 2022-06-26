@@ -1,0 +1,16 @@
+{
+  "name": "io-files",
+  "version": "1.0.0",
+  "description": "TDD com mocha chai",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha io-test/"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0",
+    "sinon": "^14.0.0"
+  }
+}
