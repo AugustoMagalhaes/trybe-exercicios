@@ -45,7 +45,9 @@ Este repositório ja contém alguns arquivos padrões, ao executar `npm install`
 
 - nodemon
 
-- sequelize mysql2
+- sequelize 
+
+- mysql2
 
 - sequelize-cli
 
