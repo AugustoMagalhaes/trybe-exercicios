@@ -1,67 +1,77 @@
-Esse é um projeto para o conteúdo de `ORM - Associations`
-### Antes de iniciar
+# Boas-vindas ao repositório do exercício do dia `24.2 - ORM - Associations`
 
-Crie um fork desse projeto e para isso siga esse [tutorial de como realizar um fork](https://guides.github.com/activities/forking/).
 
-Após feito o fork, clone o repositório criado para o seu computador.
+Esse é o exercício do conteúdo do dia `24.2 - ORM - Associations`. Esse exercício vai consolidar as seguintes habilidades:
 
-Rode o `npm install`.
+* Criar modelos
+* Relacionar dois modelos com hasMany
+* Relacionar dois modelos com belongsTo
+* Relacionar dois modelos com belongsToMany
+* Utilizar eager loading ou lazy loading
 
-Vá para a branch master do seu projeto e execute o comando:
+### Orientações
 
-git branch
+<details>
+  <summary><strong> ⌨️ Antes de iniciar</strong></summary>
 
-Mude para a branch sequelize-associations com o comando git checkout -b sequelize-associations. É nessa branch que você realizará a solução para o exercício.
+  Crie um fork desse projeto e para isso siga esse [tutorial de como realizar um fork](https://guides.github.com/activities/forking/).
 
-Observe o que deve ser feito nas instruções.
+  Após feito o fork, clone o repositório criado para o seu computador.
 
-Após a solução dos exercícios, abra um PR no seu repositório forkado e, se quiser, mergeie para a master, sinta-se a vontade!
+  Rode o `npm install`.
 
-**Atenção!** Quando for criar o PR você irá se deparar com essa tela:
+  Vá para a branch master do seu projeto e execute o comando:
 
-![PR do exercício](images/example-pr.png)
+  git branch
 
-É necessário realizar uma mudança. Clique no *base repository* como na imagem abaixo:
+  Mude para a branch sequelize-associations com o comando git checkout -b sequelize-associations. É nessa branch que você realizará a solução para o exercício.
 
-![Mudando a base do repositório](images/change-base.png)
+  Observe o que deve ser feito nas instruções.
 
-Mude para o seu repositório. Seu nome estará na frente do nome dele, por exemplo: `antonio/exercise-sequelize-associations`. Depois desse passo a página deve ficar assim:
+  Após a solução dos exercícios, abra um PR no seu repositório forkado e, se quiser, mergeie para a master, sinta-se a vontade!
 
-![Após mudança](images/after-change.png)
+  **Atenção!** Quando for criar o PR você irá se deparar com essa tela:
 
-Agora basta criar o PULL REQUEST clicando no botão `Create Pull Request`.
+  ![PR do exercício](images/example-pr.png)
 
-Para cada PR realize esse processo.
+  É necessário realizar uma mudança. Clique no *base repository* como na imagem abaixo:
 
-### COMEÇANDO OS EXERCÍCIOS
+  ![Mudando a base do repositório](images/change-base.png)
+
+  Mude para o seu repositório. Seu nome estará na frente do nome dele, por exemplo: `antonio/exercise-sequelize-associations`. Depois desse passo a página deve ficar assim:
+
+  ![Após mudança](images/after-change.png)
+
+  Agora basta criar o PULL REQUEST clicando no botão `Create Pull Request`.
+
+  Para cada PR realize esse processo.
+</details>
+
+### Antes de começar os exercícios
 
 Nesse exercício vamos criar uma API que será responsável pela gestão de um sistema de saúde. Nesse sistema terão pacientes, cada um com seu plano. Cada paciente pode ter realizado várias cirurgias, que por sua vez, devem ser listadas e categorizadas. O diagrama abaixo demonstra como o banco de dados se comportará:
 
 ![Diagrama](images/diagrama3.png)
 
-Este repositório ja contém alguns arquivos padrões, ao executar `npm install` as seguintes dependências foram instaladas:
+Este repositório já contém as dependências abaixo no `package.json`. Execute `npm install` para instalá-las.
 
 - express
-
 - nodemon
-
-- sequelize 
-
+- sequelize
 - mysql2
-
 - sequelize-cli
 
-Será necessário configurar o arquivo `config/config.js` com os dados de seu servidor.
+O exercício já vem com a estrutura básica do Sequelize configurada, **não será necessário inicializar ou criar migrations ou seeders para as tabelas**, pois ela já estão feitas. 
 
-- Crie um arquivo .env para configurar suas variáveis de ambiente
+Será necessário configurar o arquivo `config/config.js` com os dados de seu servidor. Para isso, crie um arquivo .env para configurar suas variáveis de ambiente. O arquivo .env.example contém um exemplo das variáveis de ambiente que devem ser configuradas
 
-- O arquivo .env.example contém um exemplo das variáveis de ambiente que devem ser configuradas
+Após, utilize os comandos abaixo:
 
-Após, utilize os comandos:
-
-- `npx sequelize db:create`
-- `npx sequelize db:migrate`
-- `npx sequelize db:seed:all`
+```bash
+npx sequelize db:create
+npx sequelize db:migrate
+npx sequelize db:seed:all
+```
 
 Esses comandos vão criar respectivamente, a `database`, as `tables` e após, inserir dados exemplos nas tabelas.
 
@@ -74,44 +84,47 @@ As tabelas criadas são:
 
 Feito isso, ja podem ser realizados os exercícios abaixo.
 
-#### Exercício 1
+
+### Exercícios
+
+#### 🚀 Exercício 1
 
 Crie o model de `Plans`.
 
-#### Exercício 2
+#### 🚀 Exercício 2
 
 Crie o model de `Patients`.
 
-#### Exercício 3
+#### 🚀 Exercício 3
 
 Crie o model de `Surgeries`.
 
-#### Exercício 4
+#### 🚀 Exercício 4
 
 Crie o model de `Patient_surgeries`.
 
-#### Exercício 5
+#### 🚀 Exercício 5
 
 Crie um endpoint que liste todos os pacientes e seus respectivos planos.
 
-#### Exercício 6
+#### 🚀 Exercício 6
 
 Crie um endpoint que liste todos os pacientes e suas respectivas cirurgias realizadas.
 
-#### Exercício 7
+#### 🚀 Exercício 7
 
 Crie um endpoint que de acordo com o id de um plano, que deve ser recebido via requisição, liste os pacientes que o possuem.
 
 ### Bônus
 
-#### Exercício 1 
+#### 🚀 Exercício 1 
 
 Crie um endpoint capaz de adicionar um novo paciente.
 
-#### Exercício 2
+#### 🚀 Exercício 2
 
 Crie um endpoint que liste todos os pacientes e suas cirurgias realizadas, mas oculte o nome do médico responsável.
 
-#### Exercício 3
+#### 🚀 Exercício 3
 
 Crie um endpoint que de acordo com o nome do médico, que deve ser recebido via requisição, liste todas as cirurgias realizadas pelo mesmo, um get na url `http://localhost:3000/surgeries/Rey%20Dos%20Santos`deve retornar as cirurgias realizadas pelo médico `Rey Dos Santos`.
