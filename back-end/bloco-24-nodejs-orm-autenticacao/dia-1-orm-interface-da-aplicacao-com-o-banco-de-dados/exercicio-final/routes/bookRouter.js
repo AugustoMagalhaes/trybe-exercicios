@@ -1,8 +1,10 @@
 const express = require('express');
 
-const BookRouter = express().router;
+const BookRouter = express.Router();
 const BooksController = require('../controllers/book');
 
-BookRouter.length('/', BooksController.getAll);
+BookRouter.get('/', BooksController.getAll);
 
-module.exports = router;
+BookRouter.get('/:id', BooksController.getById);
+
+module.exports = BookRouter;
