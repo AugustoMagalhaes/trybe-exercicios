@@ -16,9 +16,26 @@ const getAll = async () => {
 	}
 };
 
-const test = async () => {
-	await getAll();
+const getById = async (id) => {
+	try {
+		const books = await Book.findByPk(id);
+		return {
+			payload: books,
+			httpStatus: 200,
+		};
+	} catch (err) {
+		console.log(err.message);
+		return {
+			error: { message: `Can't find book with ${id} id` },
+			httpStatus: 404,
+		};
+	}
 };
-test();
 
-module.exports = { getAll };
+const test = async () => {
+	const test = await getById(1);
+	console.log('teste', test);
+};
+// test();
+
+module.exports = { getAll, getById };
