@@ -4,7 +4,6 @@ const { Book } = require('../models');
 const getAll = async () => {
 	try {
 		const books = await Book.findAll();
-		console.log('books serv', books);
 		return {
 			payload: books,
 			httpStatus: 200,
