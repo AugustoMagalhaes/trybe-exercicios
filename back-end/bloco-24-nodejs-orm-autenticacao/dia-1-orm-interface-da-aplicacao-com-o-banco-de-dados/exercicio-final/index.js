@@ -4,10 +4,11 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+const BookRouter = require('./routes/bookRouter');
 const BookController = require('./controllers/book');
 
 app.use(express.json());
 
-app.get('/books', BookController.getAll);
+app.use('/books', BookRouter);
 
 app.listen(PORT, () => console.log(`Ouvindo na porta ${PORT}!`));

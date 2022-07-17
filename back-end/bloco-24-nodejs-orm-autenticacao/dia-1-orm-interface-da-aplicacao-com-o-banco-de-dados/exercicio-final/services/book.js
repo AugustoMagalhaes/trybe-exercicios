@@ -1,5 +1,4 @@
 const { Book } = require('../models');
-// console.log('Book: ', Book);
 
 const getAll = async () => {
 	try {
