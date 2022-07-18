@@ -57,8 +57,6 @@ const createBook = async (title, author, pageQuantity) => {
 const updateBook = async (id, { title, author, pageQuantity }) => {
 	const [updatedBook] = await Book.update({ title, author, pageQuantity }, { where: { id } });
 
-	console.log('updated', updatedBook);
-
 	if (!updatedBook) {
 		return {
 			error: { message: `Can"t find user with id ${id}` },
@@ -71,11 +69,5 @@ const updateBook = async (id, { title, author, pageQuantity }) => {
 		httpStatus: 200,
 	};
 };
-
-const test = async () => {
-	const test = await getById(1);
-	console.log('teste', test);
-};
-// test();
 
 module.exports = { getAll, getById, createBook, updateBook };
