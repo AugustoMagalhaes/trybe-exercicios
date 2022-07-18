@@ -5,6 +5,7 @@ const getAll = async (_req, res) => {
 	try {
 		const books = await BookServices.getAll();
 		({ error, httpStatus, payload } = books);
+		console.log('eh o error', error);
 
 		if (error) throw new Error(error.message, httpStatus);
 
@@ -17,17 +18,18 @@ const getAll = async (_req, res) => {
 const getById = async (req, res) => {
 	const { id } = req.params;
 	let error, httpStatus, payload;
-	console.log('EAEEEEEEE');
 	try {
 		const books = await BookServices.getById(id);
 		({ error, httpStatus, payload } = books);
+		console.log('error no controller', error);
+		console.log('httpStatus no controller', httpStatus);
 		if (error) {
-			throw new Error(error.message, httpStatus);
+			throw new Error(error.message);
 		}
 		return res.status(httpStatus).json(payload);
 	} catch (err) {
-		console.log(err.message);
-		return res.status(httpStatus).json(err);
+		console.log('err no catch', err);
+		return res.status(httpStatus).json({ message: err.message });
 	}
 };
 
