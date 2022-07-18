@@ -63,4 +63,22 @@ const updateBook = async (req, res) => {
 	}
 };
 
-module.exports = { getAll, getById, createBook, updateBook };
+const deleteBook = async (req, res) => {
+	const { id } = req.params;
+	let httpStatus, error;
+	try {
+		const removedBook = await BookServices.deleteBook(id);
+
+		({ httpStatus, error } = removedBook);
+		if (error) {
+			throw new Error(error.message);
+		}
+
+		return res.status(httpStatus).json({ message: 'User deleted sucessfully' });
+	} catch (err) {
+		console.log(err.message);
+		return res.status(httpStatus).json({ message: err.message });
+	}
+};
+
+module.exports = { getAll, getById, createBook, updateBook, deleteBook };
