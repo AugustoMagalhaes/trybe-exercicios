@@ -38,10 +38,26 @@ const getById = async (id) => {
 	}
 };
 
+const createBook = async (title, author, pageQuantity) => {
+	const newBook = await Book.create({ title, author, pageQuantity });
+
+	if (!newBook) {
+		return {
+			error: { message: 'Something went wrong' },
+			httpStatus: 500,
+		};
+	}
+
+	return {
+		payload: newBook,
+		httpStatus: 201,
+	};
+};
+
 const test = async () => {
 	const test = await getById(1);
 	console.log('teste', test);
 };
 // test();
 
-module.exports = { getAll, getById };
+module.exports = { getAll, getById, createBook };
