@@ -70,4 +70,19 @@ const updateBook = async (id, { title, author, pageQuantity }) => {
 	};
 };
 
-module.exports = { getAll, getById, createBook, updateBook };
+const deleteBook = async (id) => {
+	const removedBook = await Book.destroy({ where: { id } });
+
+	if (!removedBook) {
+		return {
+			error: { message: 'Something went wrong' },
+			httpStatus: 500,
+		};
+	}
+	return {
+		payload: removedBook,
+		httpStatus: 200,
+	};
+};
+
+module.exports = { getAll, getById, createBook, updateBook, deleteBook };
