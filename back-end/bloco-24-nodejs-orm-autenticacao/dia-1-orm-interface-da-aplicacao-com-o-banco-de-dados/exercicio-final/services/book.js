@@ -19,15 +19,21 @@ const getAll = async () => {
 const getById = async (id) => {
 	try {
 		const books = await Book.findByPk(id);
+		if (!books) {
+			return {
+				error: { message: `Can't find id ${id}` },
+				httpStatus: 404,
+			};
+		}
 		return {
 			payload: books,
 			httpStatus: 200,
 		};
 	} catch (err) {
-		console.log(err.message);
+		console.log(error.message);
 		return {
-			error: { message: `Can't find book with ${id} id` },
-			httpStatus: 404,
+			error: { message: 'Something went wrong' },
+			httpStatus: 500,
 		};
 	}
 };
