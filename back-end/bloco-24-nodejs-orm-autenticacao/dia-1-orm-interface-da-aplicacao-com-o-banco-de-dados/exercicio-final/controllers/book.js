@@ -5,7 +5,6 @@ const getAll = async (_req, res) => {
 	try {
 		const books = await BookServices.getAll();
 		({ error, httpStatus, payload } = books);
-		console.log('eh o error', error);
 
 		if (error) throw new Error(error.message, httpStatus);
 
@@ -45,4 +44,23 @@ const createBook = async (req, res) => {
 	}
 };
 
-module.exports = { getAll, getById, createBook };
+const updateBook = async (req, res) => {
+	const { title, author, pageQuantity } = req.body;
+	const { id } = req.params;
+	let httpStatus, error, payload;
+	try {
+		const updatedBook = await BookServices.updateBook(id, { title, author, pageQuantity });
+
+		({ httpStatus, error, payload } = updatedBook);
+		if (error) {
+			throw new Error(error.message);
+		}
+
+		return res.status(httpStatus).json({ message: 'User updated sucessfully' });
+	} catch (err) {
+		console.log(err.message);
+		return res.status(httpStatus).json({ message: err.message });
+	}
+};
+
+module.exports = { getAll, getById, createBook, updateBook };
