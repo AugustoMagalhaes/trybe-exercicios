@@ -21,16 +21,28 @@ const getById = async (req, res) => {
 	try {
 		const books = await BookServices.getById(id);
 		({ error, httpStatus, payload } = books);
-		console.log('error no controller', error);
-		console.log('httpStatus no controller', httpStatus);
+
 		if (error) {
 			throw new Error(error.message);
 		}
 		return res.status(httpStatus).json(payload);
 	} catch (err) {
-		console.log('err no catch', err);
 		return res.status(httpStatus).json({ message: err.message });
 	}
 };
 
-module.exports = { getAll, getById };
+const createBook = async (req, res) => {
+	const { title, author, pageQuantity } = req.body;
+	let error, httpStatus, payload;
+	try {
+		const newBook = await BookServices.createBook(title, author, pageQuantity);
+		({ error, httpStatus, payload } = newBook);
+		if (error) throw new Error(error.message);
+
+		return res.status(httpStatus).json(payload);
+	} catch (err) {
+		return res.status(httpStatus || 500).json({ message: err.message });
+	}
+};
+
+module.exports = { getAll, getById, createBook };
