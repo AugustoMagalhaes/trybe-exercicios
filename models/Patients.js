@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
 				autoIncrement: true,
 				field: 'patient_id',
 			},
-			fullName: {
+			fullname: {
 				type: DataTypes.STRING,
 				allowNull: false,
 			},
