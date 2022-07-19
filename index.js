@@ -8,7 +8,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 const PORT = 3000;
 
-app.get('/patients', patientController.findPatients);
+app.get('/patients', patientController.findPatientsAndPlans);
+
+app.get('/patients/surgeries', patientController.findPatientsAndSurgeries);
 
 app.listen(PORT, () => {
 	console.log(`Port: ${PORT}`);
