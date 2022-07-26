@@ -14,3 +14,14 @@ console.log('segunda', daysOfWeek.segunda);
 console.log('dia de quarta', daysOfWeek[4]);
 console.log('numero de sabado', daysOfWeek['sabado']);
 console.log('dia de sabado', daysOfWeek[7]);
+var cardinalPoints;
+(function (cardinalPoints) {
+    cardinalPoints[cardinalPoints["N"] = 1] = "N";
+    cardinalPoints[cardinalPoints["E"] = 2] = "E";
+    cardinalPoints[cardinalPoints["S"] = 3] = "S";
+    cardinalPoints[cardinalPoints["W"] = 4] = "W";
+})(cardinalPoints || (cardinalPoints = {}));
+console.log('norte', cardinalPoints.N);
+console.log('Leste por chave', cardinalPoints['E']);
+console.log('Sul por valor', cardinalPoints[3]);
+console.log('Oeste', cardinalPoints.W);
