@@ -1,3 +1,4 @@
+import { Auto } from './auto';
 import { Dog } from './dog';
 import { EyeColor, Person } from './person';
 
@@ -12,3 +13,6 @@ person2.walk();
 
 const toto = new Dog('medium', 'mutt', 'toto', 9);
 toto.bark();
+
+const golzin = new Auto(2000, 'Gol Bola', 'Branco');
+golzin.speedUp();

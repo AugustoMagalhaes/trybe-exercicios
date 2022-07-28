@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const auto_1 = require("./auto");
 const dog_1 = require("./dog");
 const person_1 = require("./person");
 const person1 = new person_1.Person('Jane Doe', new Date('1986-01-01'), person_1.EyeColor.Brown);
@@ -10,3 +11,5 @@ console.log(person2);
 person2.walk();
 const toto = new dog_1.Dog('medium', 'mutt', 'toto', 9);
 toto.bark();
+const golzin = new auto_1.Auto(2000, 'Gol Bola', 'Branco');
+golzin.speedUp();
