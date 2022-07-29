@@ -1,4 +1,4 @@
-import { Pool } from 'mysql2/promise';
+import { Pool, ResultSetHeader } from 'mysql2/promise';
 
 export interface Book {
   id?: number;
@@ -19,5 +19,16 @@ export default class BookModel {
     const result = await this.connection.execute('SELECT * FROM books');
     const [rows] = result;
     return rows as Book[];
+  }
+
+  public async create(book: Book): Promise<Book> {
+    const { title, price, author, isbn } = book;
+    const result = await this.connection.execute<ResultSetHeader>(
+      'INSERT INTO books (title, price, author, isbn) VALUES (?, ?, ?, ?)',
+      [title, price, author, isbn],
+    );
+    const [dataInserted] = result;
+    const { insertId } = dataInserted;
+    return { id: insertId, ...book };
   }
 }
