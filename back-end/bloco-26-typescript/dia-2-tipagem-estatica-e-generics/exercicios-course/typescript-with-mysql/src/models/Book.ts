@@ -29,6 +29,8 @@ export default class BookModel {
     );
     const [dataInserted] = result;
     const { insertId } = dataInserted;
+    const test = { ...book };
+    console.log('teste', test);
     return { id: insertId, ...book };
   }
 }
