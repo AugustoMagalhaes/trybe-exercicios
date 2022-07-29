@@ -1,5 +1,13 @@
 import { Pool } from 'mysql2/promise';
 
+export interface Book {
+  id?: number;
+  title: string;
+  price: number;
+  author: string;
+  isbn: string;
+}
+
 export default class BookModel {
   private connection: Pool;
 
@@ -7,9 +15,9 @@ export default class BookModel {
     this.connection = connection;
   }
 
-  public async getAll() {
+  public async getAll(): Promise<Book[]> {
     const result = await this.connection.execute('SELECT * FROM books');
     const [rows] = result;
-    return rows;
+    return rows as Book[];
   }
 }
