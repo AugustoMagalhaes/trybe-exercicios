@@ -12,10 +12,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+const Book_1 = __importDefault(require("./models/Book"));
 const connection_1 = __importDefault(require("./models/connection"));
 const main = () => __awaiter(void 0, void 0, void 0, function* () {
-    const result = yield connection_1.default.execute('SELECT * FROM books');
-    const [rows] = result;
-    console.log(rows);
+    const bookModel = new Book_1.default(connection_1.default);
+    const books = yield bookModel.getAll();
+    console.log(books);
 });
 main();
