@@ -4,13 +4,13 @@
     "target": "es2016",
     "module": "commonjs",
     "rootDir": "./",
-    "outDir": "./dist",
+    "outDir": "./build",
     "preserveConstEnums": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true
   },
-  "include": ["src/**/*"],
+  // "include": ["src/**/*"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }
