@@ -1,4 +1,4 @@
-class Animal {
+export class Animal {
   constructor(public name: string, private birthDate: Date) { }
 
   get age() {
