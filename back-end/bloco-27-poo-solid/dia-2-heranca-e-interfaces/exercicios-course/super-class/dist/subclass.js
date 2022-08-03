@@ -16,5 +16,5 @@ const myFunc = (superclass) => {
 };
 const firstClass = new SubClass(false);
 const secClass = new superclass_1.default(true);
-firstClass.sayHello();
-secClass.sayHello();
+myFunc(firstClass);
+myFunc(secClass);
