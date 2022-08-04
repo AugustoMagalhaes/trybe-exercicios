@@ -3,7 +3,10 @@ class Animal {
   move() { console.log(`${this.name} está se movendo.`); }
 }
 class Bird extends Animal {
-  move() { console.log(`${this.name} está voando.`); }
+  move() {
+    super.move();
+    console.log(`${this.name} está voando.`);
+  }
 }
 class Mammal extends Animal {
   move() { console.log(`${this.name} está andando.`); }
