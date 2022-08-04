@@ -31,3 +31,122 @@ abstract class Piece {
         return true;
     }
 }
+
+class Pawn extends Piece {
+    type = 'Peão';
+    get availableMoves() {
+        const column = this.position[0];
+        const row = this.position[1];
+        const rowIndex = boardRows.indexOf(row);
+        if (rowIndex === 7)
+            return [];
+
+        const nextHouse: BoardHouse = [column, boardRows[rowIndex + 1]];
+        if (isInList(nextHouse, this.board.occupiedHouses))
+            return [];
+
+        return [nextHouse];
+    }
+}
+
+class Root extends Piece {
+    type = "Torre";
+    get availableMoves() {
+        const column = this.position[0];
+        const columnIndex = boardColumns.indexOf(column);
+
+        const row = this.position[1];
+        const rowIndex = boardRows.indexOf(row);
+
+        let availableHouses: BoardHouse[] = [];
+
+        for (let i = rowIndex - 1; i >= 0; i--) {
+            const house: BoardHouse = [boardColumns[columnIndex], boardRows[i]];
+            if (isInList(house, this.board.occupiedHouses)) break;
+            availableHouses.push(house);
+        }
+
+        for (let i = rowIndex + 1; i < 8; i++) {
+            const house: BoardHouse = [boardColumns[columnIndex], boardRows[i]];
+            if (isInList(house, this.board.occupiedHouses)) break;
+            if (isInList(house, availableHouses)) continue;
+            availableHouses.push(house);
+        }
+
+        for (let i = columnIndex + 1; i < 8; i++) {
+            const house: BoardHouse = [boardColumns[i], boardRows[rowIndex]];
+            if (isInList(house, this.board.occupiedHouses)) break;
+            if (isInList(house, availableHouses)) continue;
+            availableHouses.push(house);
+        }
+
+        for (let i = columnIndex - 1; i >= 0; i--) {
+            const house: BoardHouse = [boardColumns[i], boardRows[rowIndex]];
+            if (isInList(house, this.board.occupiedHouses)) break;
+            if (isInList(house, availableHouses)) continue;
+            availableHouses.push(house);
+        }
+
+        return availableHouses;
+    }
+}
+
+class Board {
+    pieces: Piece[] = [];
+
+    constructor() {
+        this.addPiece(new Pawn(['C', '2'], this));
+        this.addPiece(new Root(['F', '1'], this));
+    }
+
+    private addPiece(piece: Piece) {
+        if (isInList(piece.position, this.occupiedHouses))
+            return;
+        this.pieces.push(piece);
+    }
+    get occupiedHouses() {
+        return this.pieces.map((piece) => piece.position);
+    }
+
+}
+
+let piece: Piece;
+
+const board = new Board();
+console.log(board);
+
+const logPieceInfo = (piece: Piece) => {
+    console.log(
+        `----------------------
+Peça: ${piece.type}
+Posição: ${piece.position}
+Movimentos disponíveis: ${piece.availableMoves.map(
+            (b) => "[" + b + "]")
+        }
+Posições ocupadas no tabuleiro: ${board.occupiedHouses}`
+    );
+};
+
+piece = board.pieces[0];
+logPieceInfo(piece);
+piece.move(['C', '3']);
+
+piece = board.pieces[1];
+logPieceInfo(piece);
+piece.move(['F', '3']);
+logPieceInfo(piece);
+piece.move(['A', '3']);
+logPieceInfo(piece);
+
+piece = board.pieces[0];
+logPieceInfo(piece);
+piece.move(['C', '4']);
+logPieceInfo(piece);
+piece.move(['C', '5']);
+logPieceInfo(piece);
+piece.move(['C', '6']);
+logPieceInfo(piece);
+piece.move(['C', '7']);
+logPieceInfo(piece);
+piece.move(['C', '8']);
+logPieceInfo(piece);
