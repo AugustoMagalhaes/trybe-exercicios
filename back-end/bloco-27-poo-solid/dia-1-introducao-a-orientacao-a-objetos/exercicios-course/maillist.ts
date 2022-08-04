@@ -1,4 +1,5 @@
-class MailList {
+import Email from "./email";
+export default class MailList {
   constructor(private mailList: Email[] = []) { }
 
   get all(): Email[] { return this.mailList; }
@@ -14,6 +15,11 @@ class MailList {
   getEmailsBySubject(searchString: string): Email[] {
     return this.mailList
       .filter((mail) => mail.subject.indexOf(searchString) !== -1);
+  }
+
+  getByEmailsFrom(searchString: string): Email[] {
+    return this.mailList
+      .filter((mail) => )
   }
 
   addEmail(newMail: Email): void { this.mailList.push(newMail); }

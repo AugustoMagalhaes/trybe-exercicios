@@ -1,4 +1,4 @@
-class Email {
+export default class Email {
   private _from: string;
   private _to: string;
   private _message: string;
