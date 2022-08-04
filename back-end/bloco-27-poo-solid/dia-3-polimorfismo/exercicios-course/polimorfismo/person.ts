@@ -52,3 +52,16 @@ const showIdentification = (person: Person) => {
 showIdentification(pp0);
 showIdentification(pp1);
 showIdentification(lp);
+
+class Contract<T> {
+  static _number = 0;
+  constructor(public broker: T) { }
+  static get number() { return this._number; }
+}
+
+const c1 = new Contract(pp0); // Tipo inferido/ não explícito
+console.log(c1.broker.cpf);
+
+const c2: Contract<LegalPerson> = new Contract(lp); // Tipo explícito
+console.log(c2.broker.cnpj);
+
