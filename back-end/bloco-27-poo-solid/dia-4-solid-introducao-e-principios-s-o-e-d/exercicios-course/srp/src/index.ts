@@ -1,5 +1,3 @@
-// ./src/index.ts
-
 type Discipline = {
   name: string;
   grade: number;
