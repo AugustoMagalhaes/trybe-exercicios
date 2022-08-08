@@ -27,7 +27,6 @@ const percentageGradesIntoLetters = ({ name: studentName, disciplines }: Student
     return { name, grade, letterGrade };
   }) });
 
-/* "Determinar" */
 const approvedStudents = ({ disciplines }: Student): boolean =>
   disciplines.every(
     ({ grade }) => grade > 0.7,
