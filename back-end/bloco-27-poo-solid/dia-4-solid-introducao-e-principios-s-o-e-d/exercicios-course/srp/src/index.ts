@@ -37,8 +37,10 @@ const percentageGradesIntoLetters = (student: Student): Student => ({
   disciplines: student.disciplines.map(getLetterGrades) });
 
 /* "Determinar" */
-const approvedStudents = ({ disciplines }: Student): boolean =>
-  disciplines.every(({ grade }) => grade > 0.7);
+const approvedStudents = ({ disciplines, school }: Student): boolean =>
+  disciplines.every(({ grade }) => (
+    school === 'Standard' ? grade >= 0.7 : grade >= 0.8
+  ));
 
 /* "Atualizar" */
 const updateApprovalData = (student: Student): void => {
@@ -54,6 +56,27 @@ function setApproved(students: Student[]): void {
     .filter(approvedStudents)
     .map(updateApprovalData);
 }
+
+const studentsExample = [
+  {
+    name: 'Lee',
+    school: 'Standard',
+    disciplines: [
+      { name: 'matemática', grade: 0.8 },
+      { name: 'história', grade: 0.9 },
+    ],
+  },
+  {
+    name: 'Albus',
+    school: 'Hogwarts',
+    disciplines: [
+      { name: 'divination', grade: 0.8 },
+      { name: 'potions', grade: 0.9 },
+    ],
+  },
+];
+
+setApproved(studentsExample);
 
 export {
   percentageGradesIntoLetters,
