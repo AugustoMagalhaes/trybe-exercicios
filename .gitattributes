@@ -1,4 +1,4 @@
 *.sql linguist-detectable=true
-Dockerfile  text
-*.yaml    text
-*.yml     text
+Dockerfile linguist-language=Docker
+*.yaml linguist-language=Docker
+*.yml linguist-language=Docker
