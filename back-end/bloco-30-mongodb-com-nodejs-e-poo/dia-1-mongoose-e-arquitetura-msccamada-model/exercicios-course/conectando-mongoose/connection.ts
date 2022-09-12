@@ -1,3 +1,10 @@
 import { connect } from 'mongoose';
 
-connect('mongodb://localhost:27017/nomeDaMinhaBaseDeDados');
+const options = {
+  user: 'user',
+  pass: 'password',
+  autoIndex: false,
+  dbName: 'glassesStore',
+};
+
+connect('mongodb://localhost:27017/', options);
